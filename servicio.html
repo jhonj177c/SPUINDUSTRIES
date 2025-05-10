@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - SPU Industries</title>
+    <link rel="stylesheet" href="servicio.css">
+    <link rel="stylesheet" href="header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Añadir AOS para animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="IMAGENES/logo.png" alt="SPU Industries Logo">
+            </a>
+            <nav id="menunormal">
+                <ul>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    <li><a href="servicio.html" class="active">SERVICIO</a></li>
+                    <li><a href="quienessomos.html">QUIENES SOMOS</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Nuestros Servicios</h1>
+                <p>Soluciones tecnológicas innovadoras para tu negocio</p>
+            </div>
+        </section>
+
+        <section id="servicio">
+            <div class="services-container">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Programación de Páginas Web</h3>
+                        <p>Desarrollo de sitios web modernos y responsivos que se adaptan a tus necesidades</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Diseño personalizado</li>
+                            <li><i class="fas fa-check-circle"></i> Optimización SEO</li>
+                            <li><i class="fas fa-check-circle"></i> Experiencia de usuario mejorada</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Diseño de Aplicaciones</h3>
+                        <p>Creación de aplicaciones intuitivas y funcionales para tu negocio</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Interfaces modernas</li>
+                            <li><i class="fas fa-check-circle"></i> Experiencia móvil</li>
+                            <li><i class="fas fa-check-circle"></i> Alto rendimiento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Formularios</h3>
+                        <p>Desarrollo de formularios interactivos y seguros para tu empresa</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Validación en tiempo real</li>
+                            <li><i class="fas fa-check-circle"></i> Integración con bases de datos</li>
+                            <li><i class="fas fa-check-circle"></i> Seguridad avanzada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-overlay"></div>
+            <div class="cta-content" data-aos="fade-up">
+                <h2>¿Listo para comenzar tu proyecto?</h2>
+                <p>Contáctanos y descubre cómo podemos ayudarte a alcanzar tus objetivos</p>
+                <a href="contacto.html" class="cta-button">
+                    <span>Contactar ahora</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section" data-aos="fade-up">
+                <h4>SPU Industries</h4>
+                <p>Soluciones tecnológicas innovadoras para tu negocio</p>
+            </div>
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@spuindustries.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/15RBYGXWNr/"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/jjc_s117?igsh=MW5jYWVnd3VycGh1YQ=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SPU Industries. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const menuNormal = document.getElementById('menunormal');
+
+        menuToggle.addEventListener('click', () => {
+            menuNormal.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animación del indicador de scroll
+        const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
