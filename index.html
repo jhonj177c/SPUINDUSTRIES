@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    
 </head>
 <body>
     <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <header>
+        <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="IMAGENES/logo.png" alt="S.P.U Logo">
+                <img src="IMAGENES/logo.png" alt="SPU Industries Logo">
             </a>
-            
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <ul class="nav-menu">
-                <li><a href="quienessomos.html">Quiénes Somos</a></li>
-              
-                <li><a href="servicio.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+            <span class="brand-name">SPU Industries</span>
+            <nav id="menunormal">
+                <ul>
+                    <li><a href="quienessomos.html">QUIENES SOMOS</a></li>
+                    <li><a href="servicio.html">SERVICIO</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </nav>
-
+    </header>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -59,7 +62,23 @@
                 <h3>Confianza</h3>
                 <p>Compromiso con la excelencia</p>
             </div>
+         
         </div>
+    </section>
+
+    <!--  Proyecto -->
+    <section class="projects">
+        <h2>Nuestros Proyecto</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="IMAGENES/proyecto.jpg" alt="Proyecto ">
+                <div class="project-info">
+                    <h3>Todo frenos juanjo  </h3>
+                    <p>Para este proyecto se desarrollo un sistema de informacion para la empresa Todo frenos juanjo, el cual resuelve un problema de organizacion en la empresa y facilita procesos como: permite a los usuarios realizar consultas y solicitudes de servicios de manera eficiente y sencilla.</p>
+                    <a href="https://juan-srr.github.io/todofrenosjuanjo/" class="btn btn-primary" target="_blank">Ver Proyecto</a>
+                </div>
+            </div>
+        
     </section>
 
     <!-- Footer -->
@@ -75,6 +94,7 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="adaptable.js"></script>
+
 </body>
 </html> 

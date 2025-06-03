@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <header>
+        <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="IMAGENES/logo.png" alt="S.P.U Logo">
+                <img src="IMAGENES/logo.png" alt="SPU Industries Logo">
             </a>
-            
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <ul class="nav-menu">
-                <li><a href="quienessomos.html">Quiénes Somos</a></li>
-               
-                <li><a href="servicio.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+            <span class="brand-name">SPU Industries</span>
+            <nav id="menunormal">
+                <ul>
+                    <li><a href="quienessomos.html">QUIENES SOMOS</a></li>
+                    <li><a href="servicio.html">SERVICIO</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -108,16 +111,8 @@
             <p>&copy; 2024 SPU Industries</p>
         </div>
     </footer>
+    
+    <script src="adaptable.js"></script>
 
-    <script>
-        // Menú móvil
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
