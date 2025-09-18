@@ -1,0 +1,2040 @@
+/* ===== EFECTOS DE PROGRAMADOR AVANZADOS ===== */
+
+/* Logo cuadrado con efecto 3D */
+.logo-cube {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+    animation: cubeRotate 8s infinite linear;
+}
+
+.cube-face {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.cube-face.front {
+    transform: translateZ(30px);
+}
+
+.cube-face.back {
+    transform: translateZ(-30px) rotateY(180deg);
+}
+
+.cube-face.right {
+    transform: rotateY(90deg) translateZ(30px);
+}
+
+.cube-face.left {
+    transform: rotateY(-90deg) translateZ(30px);
+}
+
+.cube-face.top {
+    transform: rotateX(90deg) translateZ(30px);
+}
+
+.cube-face.bottom {
+    transform: rotateX(-90deg) translateZ(30px);
+}
+
+@keyframes cubeRotate {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(90deg) rotateY(0deg); }
+    50% { transform: rotateX(90deg) rotateY(90deg); }
+    75% { transform: rotateX(0deg) rotateY(90deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    color: #00ff88;
+    animation: matrixFall linear infinite;
+}
+
+@keyframes matrixFall {
+    0% {
+        top: -100%;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Terminal avanzado con efectos */
+.advanced-terminal {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-line {
+    margin: 0.5rem 0;
+    opacity: 0;
+    animation: terminalFadeIn 0.5s ease forwards;
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0.5s; }
+.terminal-line:nth-child(2) { animation-delay: 1s; }
+.terminal-line:nth-child(3) { animation-delay: 1.5s; }
+.terminal-line:nth-child(4) { animation-delay: 2s; }
+
+@keyframes terminalFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.terminal-prompt {
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.terminal-command {
+    color: #ffffff;
+}
+
+.terminal-output {
+    color: #00ff88;
+}
+
+.terminal-error {
+    color: #ff4444;
+}
+
+/* Efecto de typing avanzado */
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #00d4ff;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50% { border-color: #00d4ff; }
+    51%, 100% { border-color: transparent; }
+}
+
+/* Código animado con sintaxis */
+.code-block {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-line {
+    margin: 0.3rem 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: codeSlideIn 0.5s ease forwards;
+}
+
+.code-line:nth-child(1) { animation-delay: 0.1s; }
+.code-line:nth-child(2) { animation-delay: 0.2s; }
+.code-line:nth-child(3) { animation-delay: 0.3s; }
+.code-line:nth-child(4) { animation-delay: 0.4s; }
+.code-line:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes codeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.code-keyword {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.code-variable {
+    color: #4ecdc4;
+}
+
+.code-string {
+    color: #feca57;
+}
+
+.code-function {
+    color: #ff9ff3;
+}
+
+.code-operator {
+    color: #ffffff;
+}
+
+.code-bracket {
+    color: #54a0ff;
+}
+
+.code-comment {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Efectos de partículas de código */
+.code-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.code-particle {
+    position: absolute;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: #00d4ff;
+    opacity: 0.7;
+    animation: codeParticleFloat 4s linear infinite;
+}
+
+@keyframes codeParticleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efectos de glitch */
+.glitch-effect {
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-effect::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0000;
+    z-index: -1;
+}
+
+.glitch-effect::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ffff;
+    z-index: -2;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes glitch-1 {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(2px, -2px);
+    }
+    40% {
+        transform: translate(-2px, 2px);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+    }
+    80% {
+        transform: translate(2px, 2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, -2px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    60% {
+        transform: translate(2px, -2px);
+    }
+    80% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+/* Efectos de holograma */
+.hologram {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: hologramScan 3s linear infinite;
+}
+
+@keyframes hologramScan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Efectos de circuitos */
+.circuit-board {
+    position: relative;
+    background: 
+        linear-gradient(90deg, transparent 98%, #00d4ff 100%),
+        linear-gradient(0deg, transparent 98%, #00d4ff 100%);
+    background-size: 20px 20px;
+    animation: circuitPulse 2s ease-in-out infinite;
+}
+
+@keyframes circuitPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Efectos de datos */
+.data-stream {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-stream::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    animation: dataFlow 2s linear infinite;
+}
+
+@keyframes dataFlow {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Efectos de carga de programador */
+.programmer-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #00d4ff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efectos de terminal avanzado */
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #00d4ff;
+    animation: blink 1s infinite;
+}
+
+/* Efectos de código en tiempo real */
+.live-code {
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+}
+
+.live-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #ff006e);
+    animation: progressBar 3s linear infinite;
+}
+
+@keyframes progressBar {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Efectos de debugging */
+.debug-console {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #ff4444;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    color: #ff4444;
+    position: relative;
+}
+
+.debug-console::before {
+    content: 'DEBUG MODE';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #ff4444;
+    color: white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+}
+
+/* Efectos de compilación */
+.compile-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.compile-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.5), transparent);
+    animation: compileProgress 2s ease-in-out infinite;
+}
+
+@keyframes compileProgress {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Efectos de git */
+.git-branch {
+    position: relative;
+    padding-left: 20px;
+}
+
+.git-branch::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: branchGrow 2s ease-in-out infinite;
+}
+
+@keyframes branchGrow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Efectos de API */
+.api-endpoint {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border-left: 4px solid #00d4ff;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    margin: 1rem 0;
+}
+
+.api-method {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.api-method.get {
+    background: #00ff88;
+    color: #000;
+}
+
+.api-method.post {
+    background: #ffaa00;
+    color: #000;
+}
+
+.api-method.put {
+    background: #0099ff;
+    color: #fff;
+}
+
+.api-method.delete {
+    background: #ff4444;
+    color: #fff;
+}
+
+/* Efectos de base de datos */
+.database-icon {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border-radius: 8px;
+    animation: databasePulse 2s ease-in-out infinite;
+}
+
+.database-icon::before {
+    content: '🗄️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+@keyframes databasePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+    }
+}
+
+/* Efectos de servidor */
+.server-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.server-status.online {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+}
+
+.server-status.offline {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+.server-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: serverPulse 2s ease-in-out infinite;
+}
+
+.server-indicator.online {
+    background: #00ff88;
+}
+
+.server-indicator.offline {
+    background: #ff4444;
+}
+
+@keyframes serverPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* Efectos de deployment */
+.deployment-status {
+    position: relative;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    font-family: 'Fira Code', monospace;
+}
+
+.deployment-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0.5rem 0;
+    opacity: 0;
+    animation: deploymentFadeIn 0.5s ease forwards;
+}
+
+.deployment-step:nth-child(1) { animation-delay: 0.1s; }
+.deployment-step:nth-child(2) { animation-delay: 0.2s; }
+.deployment-step:nth-child(3) { animation-delay: 0.3s; }
+.deployment-step:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes deploymentFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.step-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.step-icon.pending {
+    background: #666;
+    color: #fff;
+}
+
+.step-icon.running {
+    background: #ffaa00;
+    color: #000;
+    animation: stepRunning 1s ease-in-out infinite;
+}
+
+.step-icon.completed {
+    background: #00ff88;
+    color: #000;
+}
+
+.step-icon.failed {
+    background: #ff4444;
+    color: #fff;
+}
+
+@keyframes stepRunning {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Efectos de testing */
+.test-results {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    margin: 1rem 0;
+}
+
+.test-case {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.test-status {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.test-status.pass {
+    background: #00ff88;
+    animation: testPass 0.5s ease;
+}
+
+.test-status.fail {
+    background: #ff4444;
+    animation: testFail 0.5s ease;
+}
+
+@keyframes testPass {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes testFail {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.5) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* Efectos de performance */
+.performance-meter {
+    position: relative;
+    width: 200px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.performance-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ffaa00, #00ff88);
+    border-radius: 10px;
+    animation: performanceLoad 3s ease-in-out infinite;
+}
+
+@keyframes performanceLoad {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 75%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Efectos de seguridad */
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.security-badge.secure {
+    background: rgba(0, 255, 136, 0.2);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+}
+
+.security-badge.warning {
+    background: rgba(255, 170, 0, 0.2);
+    color: #ffaa00;
+    border: 1px solid #ffaa00;
+}
+
+.security-badge.danger {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+/* Efectos de responsive */
+@media (max-width: 768px) {
+    .logo-cube {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cube-face {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .cube-face.front {
+        transform: translateZ(20px);
+    }
+    
+    .cube-face.back {
+        transform: translateZ(-20px) rotateY(180deg);
+    }
+    
+    .cube-face.right {
+        transform: rotateY(90deg) translateZ(20px);
+    }
+    
+    .cube-face.left {
+        transform: rotateY(-90deg) translateZ(20px);
+    }
+    
+    .cube-face.top {
+        transform: rotateX(90deg) translateZ(20px);
+    }
+    
+    .cube-face.bottom {
+        transform: rotateX(-90deg) translateZ(20px);
+    }
+}
+
+
+/* ===== EFECTOS DE PROGRAMADOR MEJORADOS ===== */
+
+/* Logo cuadrado con efecto 3D mejorado */
+.logo-cube-enhanced {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+    animation: cubeRotateEnhanced 12s infinite linear;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+}
+
+.cube-face-enhanced {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff, #8338ec);
+    border: 3px solid rgba(0, 212, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 
+        0 0 30px rgba(0, 212, 255, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cube-face-enhanced.front {
+    transform: translateZ(40px);
+}
+
+.cube-face-enhanced.back {
+    transform: translateZ(-40px) rotateY(180deg);
+}
+
+.cube-face-enhanced.right {
+    transform: rotateY(90deg) translateZ(40px);
+}
+
+.cube-face-enhanced.left {
+    transform: rotateY(-90deg) translateZ(40px);
+}
+
+.cube-face-enhanced.top {
+    transform: rotateX(90deg) translateZ(40px);
+}
+
+.cube-face-enhanced.bottom {
+    transform: rotateX(-90deg) translateZ(40px);
+}
+
+@keyframes cubeRotateEnhanced {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    25% { transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg); }
+    50% { transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg); }
+    75% { transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg); }
+}
+
+/* Matrix Rain Effect mejorado */
+.matrix-rain-enhanced {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.15;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.matrix-column-enhanced {
+    position: absolute;
+    top: -100%;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 16px;
+    color: #00ff88;
+    animation: matrixFallEnhanced linear infinite;
+    text-shadow: 0 0 10px #00ff88;
+    filter: blur(0.5px);
+}
+
+@keyframes matrixFallEnhanced {
+    0% {
+        top: -100%;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scaleY(1.2);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+}
+
+/* Terminal avanzado con efectos mejorados */
+.advanced-terminal-enhanced {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 20, 40, 0.9)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border: 2px solid #00ff88;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 1rem;
+    color: #00ff88;
+    box-shadow: 
+        0 0 40px rgba(0, 255, 136, 0.4),
+        inset 0 0 20px rgba(0, 255, 136, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.advanced-terminal-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    animation: terminalScan 3s linear infinite;
+}
+
+@keyframes terminalScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.terminal-line-enhanced {
+    margin: 0.8rem 0;
+    opacity: 0;
+    animation: terminalFadeInEnhanced 0.8s ease forwards;
+    position: relative;
+}
+
+.terminal-line-enhanced:nth-child(1) { animation-delay: 0.5s; }
+.terminal-line-enhanced:nth-child(2) { animation-delay: 1s; }
+.terminal-line-enhanced:nth-child(3) { animation-delay: 1.5s; }
+.terminal-line-enhanced:nth-child(4) { animation-delay: 2s; }
+.terminal-line-enhanced:nth-child(5) { animation-delay: 2.5s; }
+
+@keyframes terminalFadeInEnhanced {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.terminal-prompt-enhanced {
+    color: #00d4ff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+.terminal-command-enhanced {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.terminal-output-enhanced {
+    color: #00ff88;
+    text-shadow: 0 0 5px #00ff88;
+}
+
+.terminal-error-enhanced {
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff4444;
+    animation: errorBlink 1s ease-in-out infinite;
+}
+
+@keyframes errorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Efecto de typing avanzado mejorado */
+.typing-effect-enhanced {
+    overflow: hidden;
+    border-right: 3px solid #00d4ff;
+    white-space: nowrap;
+    animation: typingEnhanced 4s steps(50, end), blinkEnhanced 1s step-end infinite;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+@keyframes typingEnhanced {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkEnhanced {
+    0%, 50% { 
+        border-color: #00d4ff;
+        box-shadow: 0 0 10px #00d4ff;
+    }
+    51%, 100% { 
+        border-color: transparent;
+        box-shadow: none;
+    }
+}
+
+/* Código animado con sintaxis mejorada */
+.code-block-enhanced {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 40, 0.8)),
+        radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 1rem;
+    overflow-x: auto;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.code-block-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #ff006e, #8338ec);
+    border-radius: 12px 12px 0 0;
+    animation: codeProgress 5s linear infinite;
+}
+
+@keyframes codeProgress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.code-line-enhanced {
+    margin: 0.5rem 0;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: codeSlideInEnhanced 0.8s ease forwards;
+    position: relative;
+}
+
+.code-line-enhanced:nth-child(1) { animation-delay: 0.1s; }
+.code-line-enhanced:nth-child(2) { animation-delay: 0.2s; }
+.code-line-enhanced:nth-child(3) { animation-delay: 0.3s; }
+.code-line-enhanced:nth-child(4) { animation-delay: 0.4s; }
+.code-line-enhanced:nth-child(5) { animation-delay: 0.5s; }
+.code-line-enhanced:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes codeSlideInEnhanced {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.code-keyword-enhanced {
+    color: #ff6b6b;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff6b6b;
+}
+
+.code-variable-enhanced {
+    color: #4ecdc4;
+    text-shadow: 0 0 3px #4ecdc4;
+}
+
+.code-string-enhanced {
+    color: #feca57;
+    text-shadow: 0 0 5px #feca57;
+}
+
+.code-function-enhanced {
+    color: #ff9ff3;
+    text-shadow: 0 0 5px #ff9ff3;
+}
+
+.code-operator-enhanced {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.code-bracket-enhanced {
+    color: #54a0ff;
+    text-shadow: 0 0 5px #54a0ff;
+}
+
+.code-comment-enhanced {
+    color: #6c757d;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Efectos de partículas de código mejoradas */
+.code-particles-enhanced {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.code-particle-enhanced {
+    position: absolute;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 14px;
+    color: #00d4ff;
+    opacity: 0.8;
+    animation: codeParticleFloatEnhanced 6s linear infinite;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+@keyframes codeParticleFloatEnhanced {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+        transform: translateY(90vh) rotate(36deg) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(50vh) rotate(180deg) scale(1.2);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateY(10vh) rotate(324deg) scale(1);
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Efectos de glitch mejorados */
+.glitch-effect-enhanced {
+    position: relative;
+    animation: glitchEnhanced 3s infinite;
+}
+
+.glitch-effect-enhanced::before,
+.glitch-effect-enhanced::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-effect-enhanced::before {
+    animation: glitch-1-enhanced 0.8s infinite;
+    color: #ff0000;
+    z-index: -1;
+    text-shadow: 2px 0 #ff0000;
+}
+
+.glitch-effect-enhanced::after {
+    animation: glitch-2-enhanced 0.8s infinite;
+    color: #00ffff;
+    z-index: -2;
+    text-shadow: -2px 0 #00ffff;
+}
+
+@keyframes glitchEnhanced {
+    0%, 100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    10% {
+        transform: translate(-3px, 3px);
+        filter: hue-rotate(90deg);
+    }
+    20% {
+        transform: translate(3px, -3px);
+        filter: hue-rotate(180deg);
+    }
+    30% {
+        transform: translate(-3px, -3px);
+        filter: hue-rotate(270deg);
+    }
+    40% {
+        transform: translate(3px, 3px);
+        filter: hue-rotate(360deg);
+    }
+    50% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes glitch-1-enhanced {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(3px, -3px);
+    }
+    40% {
+        transform: translate(-3px, 3px);
+    }
+    60% {
+        transform: translate(-3px, -3px);
+    }
+    80% {
+        transform: translate(3px, 3px);
+    }
+}
+
+@keyframes glitch-2-enhanced {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, -3px);
+    }
+    40% {
+        transform: translate(3px, 3px);
+    }
+    60% {
+        transform: translate(3px, -3px);
+    }
+    80% {
+        transform: translate(-3px, 3px);
+    }
+}
+
+/* Efectos de holograma mejorados */
+.hologram-enhanced {
+    position: relative;
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.2) 50%, transparent 70%),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    background-size: 200% 200%, 100% 100%;
+    animation: hologramScanEnhanced 4s linear infinite;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes hologramScanEnhanced {
+    0% {
+        background-position: 0% 0%, 50% 50%;
+    }
+    50% {
+        background-position: 100% 100%, 30% 70%;
+    }
+    100% {
+        background-position: 0% 0%, 50% 50%;
+    }
+}
+
+/* Efectos de circuitos mejorados */
+.circuit-board-enhanced {
+    position: relative;
+    background: 
+        linear-gradient(90deg, transparent 98%, #00d4ff 100%),
+        linear-gradient(0deg, transparent 98%, #00d4ff 100%),
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+    background-size: 25px 25px, 25px 25px, 100% 100%;
+    animation: circuitPulseEnhanced 3s ease-in-out infinite;
+}
+
+@keyframes circuitPulseEnhanced {
+    0%, 100% {
+        opacity: 0.3;
+        background-size: 25px 25px, 25px 25px, 100% 100%;
+    }
+    50% {
+        opacity: 0.8;
+        background-size: 30px 30px, 30px 30px, 120% 120%;
+    }
+}
+
+/* Efectos de datos mejorados */
+.data-stream-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-stream-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent),
+        linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    animation: dataFlowEnhanced 3s linear infinite;
+}
+
+@keyframes dataFlowEnhanced {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Efectos de carga de programador mejorados */
+.programmer-loader-enhanced {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 4px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #00d4ff;
+    border-right-color: #00ff88;
+    animation: spinEnhanced 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+@keyframes spinEnhanced {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Efectos de terminal avanzado mejorados */
+.terminal-cursor-enhanced {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: linear-gradient(180deg, #00d4ff, #00ff88);
+    animation: blinkEnhanced 1.2s infinite;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+/* Efectos de código en tiempo real mejorados */
+.live-code-enhanced {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 20, 40, 0.9)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.live-code-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #ff006e, #8338ec, #00d4ff);
+    animation: progressBarEnhanced 4s linear infinite;
+}
+
+@keyframes progressBarEnhanced {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Efectos de debugging mejorados */
+.debug-console-enhanced {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.98), rgba(40, 0, 0, 0.95)),
+        radial-gradient(circle at 50% 50%, rgba(255, 68, 68, 0.1) 0%, transparent 70%);
+    border: 2px solid #ff4444;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: #ff4444;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 30px rgba(255, 68, 68, 0.3),
+        inset 0 0 20px rgba(255, 68, 68, 0.1);
+}
+
+.debug-console-enhanced::before {
+    content: 'DEBUG MODE ACTIVE';
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff4444, #ff6666);
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+    animation: debugPulse 2s ease-in-out infinite;
+}
+
+@keyframes debugPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+    }
+}
+
+/* Efectos de compilación mejorados */
+.compile-effect-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+.compile-effect-enhanced::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.6), transparent),
+        linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    animation: compileProgressEnhanced 3s ease-in-out infinite;
+}
+
+@keyframes compileProgressEnhanced {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Efectos de git mejorados */
+.git-branch-enhanced {
+    position: relative;
+    padding-left: 25px;
+}
+
+.git-branch-enhanced::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: branchGrowEnhanced 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px #00ff88);
+}
+
+@keyframes branchGrowEnhanced {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.2) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(0deg);
+    }
+    75% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+}
+
+/* Efectos de API mejorados */
+.api-endpoint-enhanced {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 40, 0.8)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border-left: 5px solid #00d4ff;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 25px rgba(0, 212, 255, 0.2),
+        inset 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.api-method-enhanced {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-right: 15px;
+    text-shadow: 0 0 5px currentColor;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.api-method-enhanced.get {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+    color: #000;
+}
+
+.api-method-enhanced.post {
+    background: linear-gradient(45deg, #ffaa00, #ff8800);
+    color: #000;
+}
+
+.api-method-enhanced.put {
+    background: linear-gradient(45deg, #0099ff, #0077cc);
+    color: #fff;
+}
+
+.api-method-enhanced.delete {
+    background: linear-gradient(45deg, #ff4444, #cc3333);
+    color: #fff;
+}
+
+/* Efectos de base de datos mejorados */
+.database-icon-enhanced {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff, #8338ec);
+    border-radius: 12px;
+    animation: databasePulseEnhanced 3s ease-in-out infinite;
+    box-shadow: 
+        0 0 25px rgba(0, 212, 255, 0.6),
+        inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.database-icon-enhanced::before {
+    content: '🗄️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes databasePulseEnhanced {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 0 25px rgba(0, 212, 255, 0.6),
+            inset 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 
+            0 0 40px rgba(0, 212, 255, 0.8),
+            inset 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Efectos de servidor mejorados */
+.server-status-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.server-status-enhanced.online {
+    background: linear-gradient(45deg, rgba(0, 255, 136, 0.3), rgba(0, 204, 102, 0.2));
+    color: #00ff88;
+    border: 2px solid #00ff88;
+}
+
+.server-status-enhanced.offline {
+    background: linear-gradient(45deg, rgba(255, 68, 68, 0.3), rgba(204, 51, 51, 0.2));
+    color: #ff4444;
+    border: 2px solid #ff4444;
+}
+
+.server-indicator-enhanced {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: serverPulseEnhanced 2.5s ease-in-out infinite;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.server-indicator-enhanced.online {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+}
+
+.server-indicator-enhanced.offline {
+    background: linear-gradient(45deg, #ff4444, #cc3333);
+}
+
+@keyframes serverPulseEnhanced {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.3);
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+/* Efectos de deployment mejorados */
+.deployment-status-enhanced {
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 40, 0.8)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border: 2px solid #333;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.deployment-step-enhanced {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0.8rem 0;
+    opacity: 0;
+    animation: deploymentFadeInEnhanced 0.8s ease forwards;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.deployment-step-enhanced:nth-child(1) { animation-delay: 0.1s; }
+.deployment-step-enhanced:nth-child(2) { animation-delay: 0.2s; }
+.deployment-step-enhanced:nth-child(3) { animation-delay: 0.3s; }
+.deployment-step-enhanced:nth-child(4) { animation-delay: 0.4s; }
+.deployment-step-enhanced:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes deploymentFadeInEnhanced {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.step-icon-enhanced {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.step-icon-enhanced.pending {
+    background: linear-gradient(45deg, #666, #888);
+    color: #fff;
+}
+
+.step-icon-enhanced.running {
+    background: linear-gradient(45deg, #ffaa00, #ff8800);
+    color: #000;
+    animation: stepRunningEnhanced 1.5s ease-in-out infinite;
+}
+
+.step-icon-enhanced.completed {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+    color: #000;
+}
+
+.step-icon-enhanced.failed {
+    background: linear-gradient(45deg, #ff4444, #cc3333);
+    color: #fff;
+}
+
+@keyframes stepRunningEnhanced {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% {
+        transform: scale(1.3) rotate(180deg);
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+/* Efectos de testing mejorados */
+.test-results-enhanced {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 20, 40, 0.9)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    margin: 1.5rem 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.test-case-enhanced {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0.8rem 0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.test-status-enhanced {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.test-status-enhanced.pass {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+    animation: testPassEnhanced 0.8s ease;
+}
+
+.test-status-enhanced.fail {
+    background: linear-gradient(45deg, #ff4444, #cc3333);
+    animation: testFailEnhanced 0.8s ease;
+}
+
+@keyframes testPassEnhanced {
+    0% {
+        transform: scale(0) rotate(0deg);
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% {
+        transform: scale(1.8) rotate(180deg);
+        box-shadow: 0 0 25px currentColor;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        box-shadow: 0 0 10px currentColor;
+    }
+}
+
+@keyframes testFailEnhanced {
+    0% {
+        transform: scale(0) rotate(0deg);
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% {
+        transform: scale(1.8) rotate(180deg);
+        box-shadow: 0 0 25px currentColor;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        box-shadow: 0 0 10px currentColor;
+    }
+}
+
+/* Efectos de performance mejorados */
+.performance-meter-enhanced {
+    position: relative;
+    width: 250px;
+    height: 25px;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 40, 0.8)),
+        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border: 2px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.performance-bar-enhanced {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ffaa00, #00ff88, #00d4ff);
+    border-radius: 15px;
+    animation: performanceLoadEnhanced 4s ease-in-out infinite;
+    box-shadow: 0 0 15px currentColor;
+}
+
+@keyframes performanceLoadEnhanced {
+    0% {
+        width: 0%;
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        width: 40%;
+        filter: hue-rotate(90deg);
+    }
+    50% {
+        width: 75%;
+        filter: hue-rotate(180deg);
+    }
+    75% {
+        width: 90%;
+        filter: hue-rotate(270deg);
+    }
+    100% {
+        width: 100%;
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Efectos de seguridad mejorados */
+.security-badge-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.security-badge-enhanced.secure {
+    background: linear-gradient(45deg, rgba(0, 255, 136, 0.3), rgba(0, 204, 102, 0.2));
+    color: #00ff88;
+    border: 2px solid #00ff88;
+}
+
+.security-badge-enhanced.warning {
+    background: linear-gradient(45deg, rgba(255, 170, 0, 0.3), rgba(255, 136, 0, 0.2));
+    color: #ffaa00;
+    border: 2px solid #ffaa00;
+}
+
+.security-badge-enhanced.danger {
+    background: linear-gradient(45deg, rgba(255, 68, 68, 0.3), rgba(204, 51, 51, 0.2));
+    color: #ff4444;
+    border: 2px solid #ff4444;
+}
+
+/* Efectos responsive mejorados */
+@media (max-width: 768px) {
+    .logo-cube-enhanced {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .cube-face-enhanced {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .cube-face-enhanced.front {
+        transform: translateZ(25px);
+    }
+    
+    .cube-face-enhanced.back {
+        transform: translateZ(-25px) rotateY(180deg);
+    }
+    
+    .cube-face-enhanced.right {
+        transform: rotateY(90deg) translateZ(25px);
+    }
+    
+    .cube-face-enhanced.left {
+        transform: rotateY(-90deg) translateZ(25px);
+    }
+    
+    .cube-face-enhanced.top {
+        transform: rotateX(90deg) translateZ(25px);
+    }
+    
+    .cube-face-enhanced.bottom {
+        transform: rotateX(-90deg) translateZ(25px);
+    }
+    
+    .advanced-terminal-enhanced,
+    .code-block-enhanced,
+    .debug-console-enhanced,
+    .live-code-enhanced {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .performance-meter-enhanced {
+        width: 200px;
+        height: 20px;
+    }
+}
+
+/* Optimizaciones de rendimiento */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.will-change-filter {
+    will-change: filter;
+}
+
+/* Animaciones reducidas para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
