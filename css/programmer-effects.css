@@ -1,0 +1,613 @@
+/* ===== EFECTOS DE PROGRAMADOR AVANZADOS ===== */
+
+/* Efecto Matrix Rain */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #00ff41;
+    opacity: 0.8;
+    animation: matrixFall linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes matrixFall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Efecto de terminal flotante */
+.floating-terminal {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00ff41;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #00ff41;
+    padding: 10px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.floating-terminal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.terminal-line {
+    margin-bottom: 5px;
+    animation: typewriter 2s steps(40, end);
+}
+
+.terminal-cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Efecto de código flotante */
+.code-snippet {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(0, 212, 255, 0.6);
+    pointer-events: none;
+    z-index: 1;
+    animation: floatCode 8s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes floatCode {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de glitch en texto */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff0000;
+    z-index: -1;
+}
+
+.glitch-text::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ff00;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+        transform: translate(0);
+    }
+    15%, 49% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 20%, 21%, 62%, 63%, 99%, 100% {
+        transform: translate(0);
+    }
+    21%, 62% {
+        transform: translate(2px, -2px);
+    }
+}
+
+/* Efecto de holograma */
+.hologram-effect {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: hologram-scan 3s ease-in-out infinite;
+}
+
+@keyframes hologram-scan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Efecto de partículas de código */
+.code-particle {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #00ff41;
+    pointer-events: none;
+    z-index: 1;
+    animation: codeParticleFloat 6s linear infinite;
+}
+
+@keyframes codeParticleFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de terminal typing */
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #00ff41;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ff41; }
+}
+
+/* Efecto de data stream */
+.data-stream {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-stream::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+    animation: dataFlow 2s linear infinite;
+}
+
+@keyframes dataFlow {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Efecto de circuitos */
+.circuit-pattern {
+    position: relative;
+}
+
+.circuit-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, transparent 98%, #00ff41 100%),
+        linear-gradient(0deg, transparent 98%, #00ff41 100%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    animation: circuitPulse 2s ease-in-out infinite;
+}
+
+@keyframes circuitPulse {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Efecto de loading con código */
+.code-loading {
+    position: relative;
+    font-family: 'Courier New', monospace;
+    color: #00ff41;
+}
+
+.code-loading::after {
+    content: '';
+    animation: codeLoading 1.5s infinite;
+}
+
+@keyframes codeLoading {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* Efecto de terminal boot */
+.terminal-boot {
+    font-family: 'Courier New', monospace;
+    color: #00ff41;
+    background: #000;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00ff41;
+    overflow: hidden;
+}
+
+.boot-line {
+    margin-bottom: 5px;
+    opacity: 0;
+    animation: bootSequence 0.5s ease forwards;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0s; }
+.boot-line:nth-child(2) { animation-delay: 0.5s; }
+.boot-line:nth-child(3) { animation-delay: 1s; }
+.boot-line:nth-child(4) { animation-delay: 1.5s; }
+.boot-line:nth-child(5) { animation-delay: 2s; }
+
+@keyframes bootSequence {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto de hexágono tecnológico */
+.hexagon-tech {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #00ff41;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hexagonPulse 2s ease-in-out infinite;
+}
+
+@keyframes hexagonPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Efecto de ondas de datos */
+.data-waves {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-waves::before,
+.data-waves::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+    animation: dataWave 3s ease-in-out infinite;
+}
+
+.data-waves::after {
+    animation-delay: 1.5s;
+}
+
+@keyframes dataWave {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Efecto de partículas de energía */
+.energy-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00ff41;
+    border-radius: 50%;
+    animation: energyFloat 4s linear infinite;
+    box-shadow: 0 0 10px #00ff41;
+}
+
+@keyframes energyFloat {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Efecto de terminal cursor */
+.terminal-cursor::after {
+    content: '_';
+    animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Efecto de código binario */
+.binary-rain {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #00ff41;
+    opacity: 0.3;
+    animation: binaryFall 8s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes binaryFall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Efecto de grid tecnológico */
+.tech-grid-bg {
+    position: relative;
+}
+
+.tech-grid-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridPulse 3s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Efecto de terminal prompt */
+.terminal-prompt::before {
+    content: '$ ';
+    color: #00ff41;
+    font-weight: bold;
+}
+
+.terminal-prompt::after {
+    content: '_';
+    animation: promptBlink 1s infinite;
+}
+
+@keyframes promptBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Efecto de data visualization */
+.data-viz {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: dataVizFlow 4s ease-in-out infinite;
+}
+
+@keyframes dataVizFlow {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Efecto de terminal scroll */
+.terminal-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #00ff41 transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 4px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #00cc33;
+}
+
+/* Efecto de código syntax highlighting */
+.syntax-keyword { color: #ff6b6b; font-weight: bold; }
+.syntax-string { color: #95e1d3; font-style: italic; }
+.syntax-comment { color: #6c757d; font-style: italic; }
+.syntax-function { color: #a8e6cf; font-weight: 500; }
+.syntax-variable { color: #4ecdc4; }
+.syntax-operator { color: #ffe66d; font-weight: bold; }
+.syntax-number { color: #ffd93d; }
+
+/* Efecto de terminal error */
+.terminal-error {
+    color: #ff4444;
+    animation: errorBlink 0.5s ease-in-out;
+}
+
+@keyframes errorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Efecto de terminal success */
+.terminal-success {
+    color: #00ff41;
+    animation: successGlow 1s ease-in-out;
+}
+
+@keyframes successGlow {
+    0%, 100% { text-shadow: none; }
+    50% { text-shadow: 0 0 10px #00ff41; }
+}
+
+/* Efecto de código folding */
+.code-folding {
+    position: relative;
+    overflow: hidden;
+}
+
+.code-folding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    animation: codeFold 2s ease-in-out infinite;
+}
+
+@keyframes codeFold {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+/* Efecto de terminal typing avanzado */
+.advanced-typing {
+    position: relative;
+    overflow: hidden;
+}
+
+.advanced-typing::after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #00ff41;
+    animation: advancedCursor 1s infinite;
+}
+
+@keyframes advancedCursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
